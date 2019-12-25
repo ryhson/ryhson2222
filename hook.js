@@ -6,8 +6,8 @@ var request = require("request").defaults({
     }
 });
 
-if (!process.env.WEBSİTE) {
-    console.error("Please specify the CALLBACK environment variable");
+if (!process.env.CALLBACK) {
+    console.error("Lütfen CALLBACK urlsi giriniz (Projenizin website urlsini yazmanız gereklidir) nasıl yapılacağını bilmiyorsanız https://bit.ly/xirdcsunucu sucunumuza gelerek yardım alabilirsiniz / XiR DEVELOPER TEAM");
     process.exit(1);
 }
 
@@ -23,12 +23,12 @@ var pubSubSubscriber = pubSubHubbub.createServer({
 });
 
 pubSubSubscriber.on('denied', function () {
-    console.error('DENIED', JSON.stringify(arguments));
+    console.error('GEÇERSİZ İZİN', JSON.stringify(arguments));
     process.exit(2);
 });
 
 pubSubSubscriber.on('error', function () {
-    console.error('ERROR', JSON.stringify(arguments));
+    console.error('HATA', JSON.stringify(arguments));
     process.exit(3);
 });
 
@@ -37,7 +37,7 @@ setInterval(function () {
 }, 86400000); // refresh subscription every 24 hours
 
 pubSubSubscriber.on('listen', function () {
-    console.log('listening');
+    console.log('Kanalınız Gözetleniyor...');
     // log successful subscriptions
     pubSubSubscriber.on('subscribe', function (data) {
         console.log(data.topic + ' subscribed until ' + (new Date(data.lease * 1000)).toLocaleString());
@@ -58,12 +58,12 @@ pubSubSubscriber.on('listen', function () {
         var feedstr = data.feed.toString('utf8');
         parseXml(feedstr, function (err, feed) {
             if (err) {
-                console.error("ERROR", err);
+                console.error("HATA", err);
             }
             console.log("JSON:", JSON.stringify(feed.feed));
             if (feed.feed.entry) {
                 feed.feed.entry.forEach(postToHook);
-            } else console.log("No entry");
+            } else console.log("Yeni Video Bulunamadı");
         });
     });
 });
@@ -71,7 +71,7 @@ pubSubSubscriber.on('listen', function () {
 pubSubSubscriber.listen(process.env.PORT || 8000);
 
 function postToHook(entry) {
-    console.log('Last', lastId, 'current', entry['yt:videoId'][0]);
+    console.log('Son', lastId, 'Şuanki', entry['yt:videoId'][0]);
     // Ensure it's a video upload and not a duplicate entry
     if (entry["published"]
 		&& entry["yt:channelId"] == channelId
@@ -83,7 +83,7 @@ function postToHook(entry) {
         request.post({
             url: process.env.HOOKURL,
             form: {
-                content: "New upload: " + entry["title"] + " - https://youtu.be/" + entry['yt:videoId'][0],
+                content: "Yeni Video Yüklendi: " + entry["title"] + " - https://youtu.be/" + entry['yt:videoId'][0],
                 embeds: [{
                     video: "https://youtu.be/" + entry['yt:videoId'][0]
                 }]
