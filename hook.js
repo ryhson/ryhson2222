@@ -23,12 +23,12 @@ var pubSubSubscriber = pubSubHubbub.createServer({
 });
 
 pubSubSubscriber.on('denied', function () {
-    console.error('GEÇERSİZ İZİN', JSON.stringify(arguments));
+    console.error('DENIED', JSON.stringify(arguments));
     process.exit(2);
 });
 
 pubSubSubscriber.on('error', function () {
-    console.error('HATA', JSON.stringify(arguments));
+    console.error('ERROR', JSON.stringify(arguments));
     process.exit(3);
 });
 
@@ -58,7 +58,7 @@ pubSubSubscriber.on('listen', function () {
         var feedstr = data.feed.toString('utf8');
         parseXml(feedstr, function (err, feed) {
             if (err) {
-                console.error("HATA", err);
+                console.error("ERROR", err);
             }
             console.log("JSON:", JSON.stringify(feed.feed));
             if (feed.feed.entry) {
