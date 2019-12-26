@@ -22,5 +22,5 @@
 - **[Twitch](https://twitch.tv/melil)**
 - **[XiR Dev. Team Discord](https://bit.ly/xirdcsunucu)**
 
-[XiR Dev. Team](https://bit.ly/xirdcsunucu/)
+[XiR Dev. Team /MeliL](https://bit.ly/xirdcsunucu/)
 -------------------
