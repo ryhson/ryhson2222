@@ -1,4 +1,4 @@
-![Image](https://i.postimg.cc/GhFnB72g/xirbrand.png "XiR Logo")
+![Image](https://cdn.glitch.com/e7fe552a-4dd0-403a-8719-6a8345714755%2Fxirbrand.png?v=1577380495625 "XiR Logo")
 
 🔥XiR Developer Team - Youtube Video Bot
 =================
