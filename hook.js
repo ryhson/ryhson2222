@@ -63,7 +63,7 @@ pubSubSubscriber.on('listen', function () {
             console.log("JSON:", JSON.stringify(feed.feed));
             if (feed.feed.entry) {
                 feed.feed.entry.forEach(postToHook);
-            } else console.log("Yeni Video Bulunamadı");
+            } else console.log("Yeni Video");
         });
     });
 });
