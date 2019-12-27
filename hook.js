@@ -8,7 +8,7 @@ var request = require("request").defaults({
 
 if (!process.env.CALLBACK) {
   console.error(
-    "Lütfen CALLBACK urlsi giriniz (Projenizin website urlsini yazmanız gereklidir) nasıl yapılacağını bilmiyorsanız https://discord.gg/p9kFbm4 Codare Discord sucunumuza gelerek yardım alabilirsiniz"
+    "Lütfen CALLBACK urlsi giriniz (Projenizin website urlsini yazmanız gereklidir) nasıl yapılacağını bilmiyorsanız https://discord.gg/2As7sKn Discord sucunumuza gelerek yardım alabilirsiniz"
   );
   process.exit(1);
 }
