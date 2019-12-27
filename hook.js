@@ -7,7 +7,7 @@ var request = require("request").defaults({
 });
 
 if (!process.env.CALLBACK) {
-    console.error("Lütfen CALLBACK urlsi giriniz (Projenizin website urlsini yazmanız gereklidir) nasıl yapılacağını bilmiyorsanız https://bit.ly/xirdcsunucu sucunumuza gelerek yardım alabilirsiniz / XiR DEVELOPER TEAM");
+    console.error("Lütfen CALLBACK urlsi giriniz (Projenizin website urlsini yazmanız gereklidir) nasıl yapılacağını bilmiyorsanız https://discord.gg/p9kFbm4 Discord sucunumuza gelerek yardım alabilirsiniz");
     process.exit(1);
 }
 
