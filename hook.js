@@ -2,13 +2,13 @@ const expresss = require('express');
 const appp = expresss();
 const httpp = require('http');
     appp.get("/", (request, response) => {
-    console.log(` az önce pinglenmedi. Sonra ponglanmadı... ya da başka bir şeyler olmadı.`);
     response.sendStatus(200);
     });
-    appp.listen(8000);
+    appp.listen(8030);
     setInterval(() => {
-    httpp.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+    httpp.get(`Buraya Glitch Sayfa Linki`);
     }, 60000);
+
 var parseXml = require("xml2js").parseString;
 var pubSubHubbub = require("pubsubhubbub");
 var request = require("request").defaults({
