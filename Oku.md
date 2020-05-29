@@ -11,3 +11,5 @@
 **POR**  8000 veya 8080 portunu kullanabilirsini.
 
 **CHI**  Youtube kanalınız ID'sini girinizg
+
+**Loz 'Bey** Tarafından Paylaşılmıştır. %100 Alıntıdır Kodlama Şahsıma Ait Değildir.

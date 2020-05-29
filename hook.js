@@ -8,7 +8,7 @@ var request = require("request").defaults({
 
 if (!process.env.CALLBACK) {
   console.error(
-    "Lütfen CALLBACK urlsi giriniz (Projenizin website urlsini yazmanız gereklidir) nasıl yapılacağını bilmiyorsanız https://discord.gg/2As7sKn Discord sucunumuza gelerek yardım alabilirsiniz"
+    "Lütfen CALLBACK urlsi giriniz (Projenizin website urlsini yazmanız gereklidir) nasıl yapılacağını bilmiyorsanız  Bizim Sunucumuz: https://discord.gg/JM2cYf6 Paylaşan Sunucu https://discord.gg/2As7sKn, Discord sucunumuza gelerek yardım alabilirsiniz"
   );
   process.exit(1);
 }
@@ -83,7 +83,7 @@ pubSubSubscriber.listen(process.env.PORT || 8000);
 
 function postToHook(entry) {
   console.log("Son", lastId, "Şuanki", entry["yt:videoId"][0]);
-  // Ensure it's a video upload and not a duplicate entry
+  // Ensure it's a video upload and not a duplicate entry Loz 'Bey
   if (
     entry["published"] &&
     entry["yt:channelId"] == channelId &&
@@ -127,6 +127,7 @@ function postToHook(entry) {
 
 process.on("SIGINT", function() {
   isExiting = true;
+  //LozBey
   // Unsubscribe on exit
   pubSubSubscriber.unsubscribe(topic, hub, function(err) {
     if (err) console.log(err);
