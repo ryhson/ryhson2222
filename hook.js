@@ -6,7 +6,7 @@ const httpp = require('http');
     });
     appp.listen(8030);
     setInterval(() => {
-    httpp.get(`Buraya Glitch Sayfa Linki`);
+    httpp.get(`https://glitch.com/edit/#!/glass-immediate-celsius?path=hook.js%3A9%3A0`);
     }, 60000);
 
 var parseXml = require("xml2js").parseString;
